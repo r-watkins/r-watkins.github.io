@@ -40,8 +40,9 @@ const WorkThree = () => {
           <p>
             The previous maintainer of Calcite UI Icons React or CUI Icons React
             as I refer to it, needed to offload the repo. I took up the mantle
-            of maintainer which is nothing particularly special except that I
-            had a plan to make the library just that more usable.
+            of maintainer and I was super excited to contribute to a Calcite
+            adjacent library. I already had a plan to make the library just that
+            more usable.
           </p>
 
           <br />

@@ -139,7 +139,7 @@ const WorkOne = () => {
           <figure>
             <Image src={FourthImage} alt="Roll Call list builder" />
 
-            <figcaption>IRWIN Roll Call / Resource liist builder</figcaption>
+            <figcaption>IRWIN Roll Call / Resource list builder</figcaption>
           </figure>
 
           <br />
@@ -178,8 +178,9 @@ const WorkOne = () => {
           <p>
             The IRWIN apps had scaled to new heights when all the apps became
             feature complete. They needed a larger force of engineers to manage
-            the system now and let’s face it, Esri is pricey. In the end, IRWIN
-            hired a contracting group to take over the maintenance and feature
+            the system now and in order to stay cost effective they hired a new
+            development firm to take over the project. In the end, IRWIN hired a
+            contracting group to take over the maintenance and feature
             enhancements of Observer, Roll Call and Director. I transferred all
             knowledge of the front-end to the contracting group for a smooth
             transfer.
@@ -188,7 +189,7 @@ const WorkOne = () => {
           <br />
 
           <p>
-            The IRWIN apps are marked as the catalyst andstarting point of
+            The IRWIN apps are marked as the catalyst and starting point of
             Calcite-React.
           </p>
 

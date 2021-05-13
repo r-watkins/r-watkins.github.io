@@ -1,4 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+const pageCenter = css`
+  position: absolute;
+  top: 50%;
+  margin: auto;
+`;
 
 const Container = styled.header`
   display: flex;
@@ -19,6 +25,11 @@ const Title = styled.section`
     margin-block-start: 10rem;
     margin-inline-end: 0;
   }
+
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+    ${pageCenter}
+    transform: translateY(-50%);
+  }
 `;
 
 const Name = styled.h1`
@@ -33,6 +44,10 @@ const Job = styled.h2`
 
   @media only screen and (max-width: ${(props) => props.theme.breakpoints.xl}) {
     margin-block-start: 1.5rem;
+  }
+
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+    margin-block-start: 34rem;
   }
 `;
 
@@ -64,6 +79,11 @@ const Portrait = styled.figure`
 
   @media only screen and (max-width: ${(props) => props.theme.breakpoints.xl}) {
     transform: scale(0.7);
+  }
+
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+    ${pageCenter}
+    transform: translateY(-50%) scale(0.7);
   }
 `;
 

@@ -29,13 +29,26 @@ export const theme = {
     base: 'ease 200ms',
   },
 
+  divider: {
+    height: {
+      base: '1rem',
+      sm: '0.5rem',
+    },
+    spacing: {
+      base: '-0.8rem',
+      sm: '-0.2rem',
+    },
+  },
+
   size: {
     base: '1024px',
+    md: '500px',
   },
 
   levels: {
     overlay: 100,
     scrim: 99,
+    title: 11,
     top: 10,
     mid: 5,
     back: 2,

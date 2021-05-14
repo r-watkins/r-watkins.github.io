@@ -47,11 +47,23 @@ export const GlobalStyle = createGlobalStyle`
     @media only screen and (max-width: ${theme.breakpoints.xl}) {
       font-size: 2.5rem;
     }
+
+    @media only screen and (max-width: ${theme.breakpoints.sm}) {
+      font-size: 1.7rem;
+    }
   }
 
   h3 {
     font-size: 4rem;
     font-weight: 300;
+
+    @media only screen and (max-width: ${theme.breakpoints.md}) {
+      font-size: 3rem;
+    }
+
+    @media only screen and (max-width: ${theme.breakpoints.sm}) {
+      font-size: 1.5rem;
+    }
   }
 
   h4 {
@@ -59,6 +71,10 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 2rem;
     font-weight: 400;
     font-style: italic;
+
+    @media only screen and (max-width: ${theme.breakpoints.sm}) {
+      font-size: 1.1rem;
+    }
   }
 
   h5 {

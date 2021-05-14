@@ -16,13 +16,45 @@ const Section = styled.section`
   margin: auto;
   margin-block-end: 5rem;
   padding-block-start: ${(props) => props.theme.spacing.topGutter};
+
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.lg}) {
+    padding-inline-start: 2rem;
+    padding-inline-end: 2rem;
+  }
+
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+    position: fixed;
+    top: 0.5rem;
+    left: 6rem;
+    z-index: ${(props) => props.theme.levels.title};
+    padding: 0;
+    margin: 0;
+  }
+
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    top: 1rem;
+    left: 5rem;
+    z-index: ${(props) => props.theme.levels.title};
+    padding: 0;
+    margin: 0;
+  }
 `;
 
 const Divider = styled.div`
   width: 25rem;
-  height: 1rem;
-  margin-block-start: -0.8rem;
+  height: ${(props) => props.theme.divider.height.base};
+  margin-block-start: ${(props) => props.theme.divider.spacing.base};
   background-color: ${(props) => props.theme.palette.primary};
+
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+    width: 17rem;
+    margin-block-start: ${(props) => props.theme.divider.spacing.sm};
+  }
+
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    width: 9rem;
+    height: ${(props) => props.theme.divider.height.sm};
+  }
 `;
 
 export { Container, Section, Divider };

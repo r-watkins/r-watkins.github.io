@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 const Container = styled.header`
   display: flex;
@@ -77,8 +77,8 @@ const Icon = styled.img`
 
 const Divider = styled.div`
   width: 40rem;
-  height: 1rem;
-  margin-block-start: -0.8rem;
+  height: ${(props) => props.theme.divider.height.base};
+  margin-block-start: ${(props) => props.theme.divider.spacing.base};
   background-color: ${(props) => props.theme.palette.primary};
 
   @media only screen and (max-width: ${(props) => props.theme.breakpoints.xl}) {
@@ -86,8 +86,8 @@ const Divider = styled.div`
   }
 
   @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
-    height: 0.5rem;
-    margin-block-start: -0.3rem;
+    height: ${(props) => props.theme.divider.height.sm};
+    margin-block-start: ${(props) => props.theme.divider.spacing.sm};
     width: 10rem;
   }
 `;

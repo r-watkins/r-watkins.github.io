@@ -13,6 +13,7 @@ import {
   Nav,
   PageLink,
   SubPageLink,
+  Menu,
 } from './styles';
 import { ReactComponent as MenuIcon } from '../../styles/images/menu.svg';
 import { ReactComponent as BackIcon } from '../../styles/images/backburger.svg';
@@ -35,9 +36,11 @@ const Drawer = (props) => {
 
   return (
     <>
-      <MenuButton onClick={handleOpen}>
-        <MenuIcon />
-      </MenuButton>
+      <Container>
+        <MenuButton onClick={handleOpen}>
+          <MenuIcon />
+        </MenuButton>
+      </Container>
 
       <AnimatePresence exitBeforeEnter initial={false}>
         {open && (
@@ -53,7 +56,7 @@ const Drawer = (props) => {
 
       <AnimatePresence exitBeforeEnter initial={false}>
         {open && (
-          <Container
+          <Menu
             as={motion.nav}
             initial={{ opacity: 0, x: '-100%' }}
             animate={{ opacity: 1, x: 0 }}
@@ -139,7 +142,7 @@ const Drawer = (props) => {
                 About
               </PageLink>
             </Nav>
-          </Container>
+          </Menu>
         )}
       </AnimatePresence>
     </>

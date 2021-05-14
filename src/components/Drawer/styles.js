@@ -11,11 +11,16 @@ const buttonStyles = css`
   height: 3rem;
 `;
 
-const MenuButton = styled.button`
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
+const Container = styled.header`
+  position: fixed;
   z-index: ${(props) => props.theme.levels.top};
+  width: 100%;
+  padding: 1rem;
+  background: ${(props) => props.theme.palette.transparency};
+  backdrop-filter: blur(5px);
+`;
+
+const MenuButton = styled.button`
   ${buttonStyles}
   border: 3px solid ${(props) => props.theme.palette.secondary};
   background: transparent;
@@ -52,7 +57,7 @@ const Scrim = styled.div`
   opacity: 0.5;
 `;
 
-const Container = styled.header`
+const Menu = styled.section`
   position: absolute;
   top: 0;
   left: 0;
@@ -107,10 +112,11 @@ const SubPageLink = styled(SubnavLink)`
 `;
 
 export {
+  Container,
   MenuButton,
   CloseButton,
   Scrim,
-  Container,
+  Menu,
   Nav,
   PageLink,
   SubPageLink,

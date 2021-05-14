@@ -1,11 +1,11 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import Backdrop from '../../styles/images/backdrop-resume.svg';
 
 const Container = styled.main`
+  overflow-y: auto;
   width: 100%;
   height: 100%;
-  overflow-y: auto;
   background-image: url(${Backdrop});
   background-color: ${(props) => props.theme.palette.background};
   background-size: cover;
@@ -15,13 +15,32 @@ const Container = styled.main`
 
 const Article = styled.article`
   width: ${(props) => props.theme.size.base};
+  box-sizing: border-box;
   margin: auto;
   padding-block-start: ${(props) => props.theme.spacing.topGutter};
+
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.lg}) {
+    padding-inline-start: 2rem;
+    padding-inline-end: 2rem;
+  }
+
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+    width: 100%;
+  }
+
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    padding-block-start: 6rem;
+  }
 `;
 
 const Header = styled.section`
   display: flex;
   justify-content: space-between;
+  padding-block-end: 2rem;
+
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    flex-direction: column;
+  }
 `;
 
 const Divider = styled.div`
@@ -36,6 +55,10 @@ const Info = styled.section`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    margin-block-start: 3rem;
+  }
 `;
 
 const Print = styled.a`
@@ -62,29 +85,39 @@ const Section = styled.section`
   grid-template-columns: 1fr 3fr;
   grid-template-rows: 1fr;
   width: 100%;
-  margin-block-start: 2rem;
   padding: 2rem 0;
   border-block-start: 1px solid ${(props) => props.theme.palette.secondary};
+
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const SectionTitle = styled.h5`
   width: 250px;
   white-space: nowrap;
+
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    margin-block-end: 2rem;
+  }
 `;
 
 const SectionBlock = styled.div`
   width: 100%;
   margin-block-end: 5rem;
 
-  ${(props) =>
-    props.nogutter &&
-    css`
-      margin-block-end: 0;
-    `};
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    margin-block-end: 1.5rem;
+  }
+
+  &:last-child {
+    margin-block-end: 0;
+  }
 `;
 
 const SectionBlockHeader = styled.p`
-  margin: 0.5rem 0;
+  margin-block-end: 0.5rem;
   font-size: 1.1rem;
 `;
 

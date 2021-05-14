@@ -8,7 +8,9 @@ import { motion } from 'framer-motion';
 import Grid from '../../components/Grid';
 
 // Style imports
-import { Container, Divider, Section } from './styles';
+import { Container } from './styles';
+import { Divider } from '../../components/common/Divider/styles';
+import { Title } from '../../components/common/Title/styles';
 
 /**
  * The selected works page.
@@ -22,10 +24,10 @@ const Works = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Section>
+      <Title>
         <h3>Selected Works</h3>
         <Divider />
-      </Section>
+      </Title>
 
       <Grid />
     </Container>

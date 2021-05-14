@@ -11,7 +11,6 @@ import {
   Container,
   Article,
   Header,
-  Divider,
   Info,
   Print,
   Icon,
@@ -20,6 +19,8 @@ import {
   SectionBlock,
   SectionBlockHeader,
 } from './styles';
+import { Title } from '../../components/common/Title/styles';
+import { Divider } from '../../components/common/Divider/styles';
 import PrintIcon from '../../styles/images/print-icon.svg';
 
 import Document from '../../assets/Resume.pdf';
@@ -36,6 +37,11 @@ const Resume = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
+      <Title>
+        <h3>Resume</h3>
+        <Divider />
+      </Title>
+
       <Article>
         <Header>
           <div>

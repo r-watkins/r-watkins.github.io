@@ -1,11 +1,5 @@
 import styled, { css } from 'styled-components';
 
-const pageCenter = css`
-  position: absolute;
-  top: 50%;
-  margin: auto;
-`;
-
 const Container = styled.header`
   display: flex;
   justify-content: center;
@@ -27,13 +21,20 @@ const Title = styled.section`
   }
 
   @media only screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
-    ${pageCenter}
+    position: absolute;
+    top: 50%;
+    margin: auto;
     transform: translateY(-50%);
   }
 `;
 
 const Name = styled.h1`
   margin-inline-start: 3rem;
+
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    margin-inline-start: 1rem;
+    font-size: 1.5rem;
+  }
 `;
 
 const Job = styled.h2`
@@ -49,6 +50,11 @@ const Job = styled.h2`
   @media only screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
     margin-block-start: 34rem;
   }
+
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    font-size: 1rem;
+    margin-block-start: 21rem;
+  }
 `;
 
 const Icon = styled.img`
@@ -61,6 +67,12 @@ const Icon = styled.img`
     height: 1.5rem;
     margin: 0 1rem;
   }
+
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    width: 1rem;
+    height: 1rem;
+    margin: 0 0.5rem;
+  }
 `;
 
 const Divider = styled.div`
@@ -72,6 +84,12 @@ const Divider = styled.div`
   @media only screen and (max-width: ${(props) => props.theme.breakpoints.xl}) {
     width: 26rem;
   }
+
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    height: 0.5rem;
+    margin-block-start: -0.3rem;
+    width: 10rem;
+  }
 `;
 
 const Portrait = styled.figure`
@@ -82,8 +100,15 @@ const Portrait = styled.figure`
   }
 
   @media only screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
-    ${pageCenter}
+    position: absolute;
+    top: 52%;
+    margin: auto;
     transform: translateY(-50%) scale(0.7);
+  }
+
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
+    top: 50%;
+    transform: translateY(-50%) scale(0.45);
   }
 `;
 

@@ -45,10 +45,10 @@ export const theme = {
   breakpoints: {
     xl: '1550px',
     lg: '1366px',
-    md: '1024px',
-    sm: '760px',
-    xs: '320px',
+    md: '1023px',
+    sm: '767px',
+    xs: '375px',
   },
 
-  navBreak: 1024,
+  navBreak: 1023,
 };

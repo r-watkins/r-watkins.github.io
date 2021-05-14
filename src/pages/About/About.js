@@ -7,7 +7,9 @@ import { motion } from 'framer-motion';
 // Component imports
 
 // Style imports
-import { Container, Divider, Section, Content, Images, Image } from './styles';
+import { Container, Content, Images, Image } from './styles';
+import { Title } from '../../components/common/Title/styles';
+import { Divider } from '../../components/common/Divider/styles';
 import Photo from '../../styles/images/photo01.jpg';
 import Frame from '../../styles/images/photo-frame.svg';
 
@@ -23,10 +25,10 @@ const About = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Section>
+      <Title>
         <h3>About</h3>
         <Divider />
-      </Section>
+      </Title>
 
       <Content>
         <p>

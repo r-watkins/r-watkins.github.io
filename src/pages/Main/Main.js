@@ -5,7 +5,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 // Component imports
-import Nav from '../../components/Nav';
 import Cover from '../../components/Cover';
 
 // Style imports
@@ -23,7 +22,6 @@ const Main = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Nav selected="home" />
       <Cover />
     </Container>
   );

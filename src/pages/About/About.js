@@ -5,7 +5,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 // Component imports
-import Nav from '../../components/Nav';
 
 // Style imports
 import { Container, Divider, Section, Content, Images, Image } from './styles';
@@ -24,8 +23,6 @@ const About = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Nav selected="about" />
-
       <Section>
         <h3>About</h3>
         <Divider />

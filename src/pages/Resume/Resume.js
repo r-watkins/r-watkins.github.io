@@ -5,7 +5,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 // Component imports
-import Nav from '../../components/Nav';
 
 // Style imports
 import {
@@ -37,8 +36,6 @@ const Resume = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Nav selected="resume" />
-
       <Article>
         <Header>
           <div>

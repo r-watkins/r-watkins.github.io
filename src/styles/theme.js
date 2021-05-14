@@ -33,6 +33,15 @@ export const theme = {
     base: '1024px',
   },
 
+  levels: {
+    overlay: 100,
+    scrim: 99,
+    top: 10,
+    mid: 5,
+    back: 2,
+    base: 1,
+  },
+
   breakpoints: {
     xl: '1550px',
     lg: '1366px',
@@ -40,4 +49,6 @@ export const theme = {
     sm: '760px',
     xs: '320px',
   },
+
+  navBreak: 1024,
 };

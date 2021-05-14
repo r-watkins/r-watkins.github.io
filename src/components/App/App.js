@@ -6,6 +6,7 @@ import { Switch, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
 // Component imports
+import Nav from '../Nav';
 import Main from '../../pages/Main';
 import Works from '../../pages/Works';
 import Resume from '../../pages/Resume';
@@ -26,9 +27,13 @@ import '../../styles/font.css';
  */
 function App() {
   const location = useLocation();
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
+
+      <Nav selected={location} />
+
       <AnimatePresence exitBeforeEnter initial={false}>
         <Switch location={location} key={location.pathname}>
           <Route exact path="/" component={Main} />

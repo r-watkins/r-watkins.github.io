@@ -5,7 +5,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 // Component imports
-import Nav from '../../components/Nav';
 import Grid from '../../components/Grid';
 
 // Style imports
@@ -23,8 +22,6 @@ const Works = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Nav selected="works" />
-
       <Section>
         <h3>Selected Works</h3>
         <Divider />

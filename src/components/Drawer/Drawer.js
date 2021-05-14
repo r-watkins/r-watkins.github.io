@@ -84,7 +84,9 @@ const Drawer = (props) => {
               <SubPageLink
                 to="/works/halt-and-catch-fire"
                 selected={
-                  selected === '/works/halt-and-catch-fire' ? true : false
+                  selected.pathname === '/works/halt-and-catch-fire'
+                    ? true
+                    : false
                 }
                 onClick={handleClose}
               >
@@ -93,7 +95,9 @@ const Drawer = (props) => {
 
               <SubPageLink
                 to="/works/innerspaces"
-                selected={selected === '/works/innerspaces' ? true : false}
+                selected={
+                  selected.pathname === '/works/innerspaces' ? true : false
+                }
                 onClick={handleClose}
               >
                 02 Innerspaces
@@ -101,7 +105,9 @@ const Drawer = (props) => {
 
               <SubPageLink
                 to="/works/give-them-a-show"
-                selected={selected === '/works/give-them-a-show' ? true : false}
+                selected={
+                  selected.pathname === '/works/give-them-a-show' ? true : false
+                }
                 onClick={handleClose}
               >
                 03 Give Them a Show
@@ -109,7 +115,9 @@ const Drawer = (props) => {
 
               <SubPageLink
                 to="/works/make-it-pop"
-                selected={selected === '/works/make-it-pop' ? true : false}
+                selected={
+                  selected.pathname === '/works/make-it-pop' ? true : false
+                }
                 onClick={handleClose}
               >
                 04 Make It Pop

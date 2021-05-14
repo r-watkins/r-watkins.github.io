@@ -2,10 +2,10 @@
 import React from 'react';
 
 // Library imports
+import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 // Component imports
-import Nav from '../../../../components/Nav';
 import Subnav from '../../../../components/Subnav';
 import Article from '../../../../components/Article';
 
@@ -21,6 +21,8 @@ import FifthImage from './images/image05.jpg';
  * The selected works page.
  */
 const WorkOne = () => {
+  const location = useLocation();
+
   return (
     <Container
       as={motion.main}
@@ -29,8 +31,7 @@ const WorkOne = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Nav selected="works" />
-      <Subnav selected={1} />
+      <Subnav selected={location} />
 
       <Row>
         <div aria-hidden="true"></div>

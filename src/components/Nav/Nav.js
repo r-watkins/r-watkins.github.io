@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 
 // Component imports
+import { matchPath } from 'react-router';
 import Drawer from '../Drawer';
 
 // Style imports
@@ -28,6 +29,20 @@ const Nav = (props) => {
     return () => window.removeEventListener('resize', handleWindowResize);
   }, []);
 
+  const resolveWorksPath = (path) => {
+    const workspath = matchPath(path, {
+      path: '/works/:id',
+      exact: true,
+      strict: false,
+    });
+
+    if (workspath || path === '/works') {
+      return true;
+    }
+
+    return false;
+  };
+
   return parseInt(width) > breakpoint ? (
     <Container>
       <PageLink to="/" selected={selected.pathname === '/' ? true : false}>
@@ -36,7 +51,7 @@ const Nav = (props) => {
 
       <PageLink
         to="/works"
-        selected={selected.pathname === '/works' ? true : false}
+        selected={resolveWorksPath(selected.pathname) ? true : false}
       >
         Works
       </PageLink>

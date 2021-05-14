@@ -2,10 +2,10 @@
 import React from 'react';
 
 // Library imports
+import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 // Component imports
-import Nav from '../../../../components/Nav';
 import Subnav from '../../../../components/Subnav';
 import Article from '../../../../components/Article';
 
@@ -19,6 +19,8 @@ import VideoClip from './images/video.mp4';
  * The selected works page.
  */
 const WorkFour = () => {
+  const location = useLocation();
+
   return (
     <Container
       as={motion.main}
@@ -27,8 +29,7 @@ const WorkFour = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Nav selected="works" />
-      <Subnav selected={4} />
+      <Subnav selected={location} />
 
       <Row>
         <div aria-hidden="true"></div>

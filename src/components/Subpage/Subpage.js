@@ -15,6 +15,8 @@ import WorkFour from '../../pages/subpages/Work04';
 // Style imports
 import { useTheme } from 'styled-components';
 import { Container, Row } from './styles';
+import { Divider } from '../../components/common/Divider/styles';
+import { Title } from '../../components/common/Title/styles';
 
 /**
  * Subpage container for the works articles.
@@ -46,6 +48,13 @@ const Subpage = (props) => {
       transition={{ duration: 0.5 }}
     >
       {width > breakpoint && <Subnav selected={location} />}
+
+      {width < breakpoint && (
+        <Title>
+          <h3>Selected Works</h3>
+          <Divider />
+        </Title>
+      )}
 
       <Row>
         <div aria-hidden="true"></div>

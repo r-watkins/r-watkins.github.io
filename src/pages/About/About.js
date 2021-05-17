@@ -38,7 +38,7 @@ const About = () => {
           seamlessly between the aesthetic and the technical. He is passionate
           about his work and cares deeply about his client’s stories and the
           problems they are trying to solve. When he’s not writing code for UI
-          you can find working on his next digital illustration or playing a
+          you can find him working on his next digital illustration or playing a
           game with family &amp; friends.
         </p>
 

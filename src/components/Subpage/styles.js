@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import Backdrop from '../../../../styles/images/backdrop-works-one.svg';
+import Backdrop from '../../styles/images/backdrop-works-one.svg';
 
 const Container = styled.main`
   width: 100%;
@@ -18,6 +18,11 @@ const Row = styled.div`
   grid-template-rows: 1fr;
   width: ${(props) => props.theme.size.base};
   margin: auto;
+  box-sizing: border-box;
+
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.lg}) {
+    padding-inline-end: 2rem;
+  }
 `;
 
 const Image = styled.img`

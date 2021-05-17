@@ -15,33 +15,31 @@ const Subnav = (props) => {
   return (
     <Container>
       <PageLink
-        to="/works/halt-and-catch-fire"
+        to="/work/halt-and-catch-fire"
         selected={
-          selected.pathname === '/works/halt-and-catch-fire' ? true : false
+          selected.pathname === '/work/halt-and-catch-fire' ? true : false
         }
       >
         01 Halt and Catch Fire
       </PageLink>
 
       <PageLink
-        to="/works/innerspaces"
-        selected={selected.pathname === '/works/innerspaces' ? true : false}
+        to="/work/innerspaces"
+        selected={selected.pathname === '/work/innerspaces' ? true : false}
       >
         02 Innerspaces
       </PageLink>
 
       <PageLink
-        to="/works/give-them-a-show"
-        selected={
-          selected.pathname === '/works/give-them-a-show' ? true : false
-        }
+        to="/work/give-them-a-show"
+        selected={selected.pathname === '/work/give-them-a-show' ? true : false}
       >
         03 Give Them a Show
       </PageLink>
 
       <PageLink
-        to="/works/make-it-pop"
-        selected={selected.pathname === '/works/make-it-pop' ? true : false}
+        to="/work/make-it-pop"
+        selected={selected.pathname === '/work/make-it-pop' ? true : false}
       >
         04 Make It Pop
       </PageLink>

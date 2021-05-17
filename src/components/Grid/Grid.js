@@ -21,7 +21,7 @@ import {
 const Works = () => {
   return (
     <Container>
-      <Card to="/works/halt-and-catch-fire">
+      <Card to="/work/halt-and-catch-fire">
         <CardBody>
           <Number>01</Number>
           <div>
@@ -32,7 +32,7 @@ const Works = () => {
         <Divider className="underline" />
       </Card>
 
-      <Card to="/works/innerspaces">
+      <Card to="/work/innerspaces">
         <CardBody>
           <Number>02</Number>
           <div>
@@ -43,7 +43,7 @@ const Works = () => {
         <Divider className="underline" />
       </Card>
 
-      <Card to="/works/give-them-a-show">
+      <Card to="/work/give-them-a-show">
         <CardBody>
           <Number>03</Number>
           <div>
@@ -54,7 +54,7 @@ const Works = () => {
         <Divider className="underline" />
       </Card>
 
-      <Card to="/works/make-it-pop">
+      <Card to="/work/make-it-pop">
         <CardBody>
           <Number>04</Number>
           <div>

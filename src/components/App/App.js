@@ -11,10 +11,7 @@ import Main from '../../pages/Main';
 import Works from '../../pages/Works';
 import Resume from '../../pages/Resume';
 import About from '../../pages/About';
-import WorkOne from '../../pages/Works/subpages/WorkOne';
-import WorkTwo from '../../pages/Works/subpages/WorkTwo';
-import WorkThree from '../../pages/Works/subpages/WorkThree';
-import WorkFour from '../../pages/Works/subpages/WorkFour';
+import Subpage from '../Subpage';
 
 // Style imports
 import { ThemeProvider } from 'styled-components';
@@ -38,15 +35,9 @@ function App() {
         <Switch location={location} key={location.pathname}>
           <Route exact path="/" component={Main} />
 
-          <Route exact path="/works" component={Works} />
+          <Route path="/works" component={Works} />
 
-          <Route exact path="/works/halt-and-catch-fire" component={WorkOne} />
-
-          <Route exact path="/works/innerspaces" component={WorkTwo} />
-
-          <Route exact path="/works/give-them-a-show" component={WorkThree} />
-
-          <Route exact path="/works/make-it-pop" component={WorkFour} />
+          <Route path="/work/:id" component={Subpage} />
 
           <Route path="/resume" component={Resume} />
 

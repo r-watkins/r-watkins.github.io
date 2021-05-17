@@ -15,6 +15,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
+    overflow: hidden;
     background-color: ${theme.palette.background};
     font-size: ${theme.font.baseSize};
     font-weight: 300;

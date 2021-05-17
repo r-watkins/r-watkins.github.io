@@ -15,7 +15,6 @@ const Container = styled.header`
   position: fixed;
   z-index: ${(props) => props.theme.levels.top};
   width: 100%;
-  height: 100vh;
   padding: 1rem;
   background: ${(props) => props.theme.palette.transparency};
   backdrop-filter: blur(5px);
@@ -66,7 +65,7 @@ const Menu = styled.section`
   display: flex;
   flex-direction: column;
   width: 300px;
-  height: 100vh;
+  height: 100%;
   box-sizing: border-box;
   padding: 1rem;
   background: ${(props) => props.theme.palette.common.white};

@@ -53,6 +53,7 @@ const Scrim = styled.div`
   z-index: ${(props) => props.theme.levels.scrim};
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
   background: ${(props) => props.theme.palette.common.black};
   opacity: 0.5;
 `;

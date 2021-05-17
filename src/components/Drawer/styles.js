@@ -68,6 +68,7 @@ const Menu = styled.section`
   width: 300px;
   height: 100%;
   box-sizing: border-box;
+  overflow: hidden;
   padding: 1rem;
   background: ${(props) => props.theme.palette.common.white};
   box-shadow: 0px 0px 10px ${(props) => props.theme.palette.common.white};

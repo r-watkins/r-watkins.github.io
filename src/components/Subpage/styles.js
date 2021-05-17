@@ -23,6 +23,13 @@ const Row = styled.div`
   @media only screen and (max-width: ${(props) => props.theme.breakpoints.lg}) {
     padding-inline-end: 2rem;
   }
+
+  @media only screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    padding-inline-end: 0;
+  }
 `;
 
 const Image = styled.img`

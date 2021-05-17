@@ -31,7 +31,7 @@ const Nav = (props) => {
 
   const resolveWorksPath = (path) => {
     const workspath = matchPath(path, {
-      path: '/works/:id',
+      path: '/work/:id',
       exact: true,
       strict: false,
     });
@@ -43,7 +43,7 @@ const Nav = (props) => {
     return false;
   };
 
-  return parseInt(width) > breakpoint ? (
+  return width > breakpoint ? (
     <Container>
       <PageLink to="/" selected={selected.pathname === '/' ? true : false}>
         Home

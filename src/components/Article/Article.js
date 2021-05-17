@@ -1,15 +1,12 @@
 // React imports
 import React from 'react';
 
-// Library imports
-
-// Component imports
-
 // Style imports
-import { Container, Title, Divider, Subtext } from './styles';
+import { Container, Title, Subtext } from './styles';
+import { Divider } from '../common/Divider/styles';
 
 /**
- * The selected works page.
+ * The selected works article container for text and images/media.
  */
 const Article = (props) => {
   const { title, subtext, children } = props;

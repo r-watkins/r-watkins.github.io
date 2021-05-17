@@ -82,10 +82,18 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1.5rem;
     font-weight: 400;
     font-style: italic;
+
+    @media only screen and (max-width: ${theme.breakpoints.sm}) {
+      font-size: 1.1rem;
+    }
   }
 
   h6 {
     font-size: 1.3rem;
+
+    @media only screen and (max-width: ${theme.breakpoints.sm}) {
+      font-size: 1.1rem;
+    }
   }
 
   a {

@@ -85,9 +85,9 @@ const Drawer = (props) => {
               </PageLink>
 
               <SubPageLink
-                to="/works/halt-and-catch-fire"
+                to="/work/halt-and-catch-fire"
                 selected={
-                  selected.pathname === '/works/halt-and-catch-fire'
+                  selected.pathname === '/work/halt-and-catch-fire'
                     ? true
                     : false
                 }
@@ -97,9 +97,9 @@ const Drawer = (props) => {
               </SubPageLink>
 
               <SubPageLink
-                to="/works/innerspaces"
+                to="/work/innerspaces"
                 selected={
-                  selected.pathname === '/works/innerspaces' ? true : false
+                  selected.pathname === '/work/innerspaces' ? true : false
                 }
                 onClick={handleClose}
               >
@@ -107,9 +107,9 @@ const Drawer = (props) => {
               </SubPageLink>
 
               <SubPageLink
-                to="/works/give-them-a-show"
+                to="/work/give-them-a-show"
                 selected={
-                  selected.pathname === '/works/give-them-a-show' ? true : false
+                  selected.pathname === '/work/give-them-a-show' ? true : false
                 }
                 onClick={handleClose}
               >
@@ -117,9 +117,9 @@ const Drawer = (props) => {
               </SubPageLink>
 
               <SubPageLink
-                to="/works/make-it-pop"
+                to="/work/make-it-pop"
                 selected={
-                  selected.pathname === '/works/make-it-pop' ? true : false
+                  selected.pathname === '/work/make-it-pop' ? true : false
                 }
                 onClick={handleClose}
               >

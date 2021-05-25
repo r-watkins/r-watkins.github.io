@@ -48,7 +48,8 @@ export const theme = {
   levels: {
     overlay: 100,
     scrim: 99,
-    title: 11,
+    title: 12,
+    nav: 11,
     top: 10,
     mid: 5,
     back: 2,

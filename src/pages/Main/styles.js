@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Backdrop from '../../styles/images/backdrop.svg';
 
 const Container = styled.main`
+  overflow: hidden;
   width: 100%;
   height: 100%;
   background-image: url(${Backdrop});

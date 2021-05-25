@@ -2,9 +2,9 @@
 import React from 'react';
 
 // Library imports
-import { motion } from 'framer-motion';
 
 // Component imports
+import Curtain from '../../components/Curtain';
 
 // Style imports
 import { Container, Content, Images, Image } from './styles';
@@ -18,13 +18,9 @@ import Frame from '../../styles/images/photo-frame.svg';
  */
 const About = () => {
   return (
-    <Container
-      as={motion.main}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-    >
+    <Container>
+      <Curtain />
+
       <Title>
         <h3>About</h3>
         <Divider />

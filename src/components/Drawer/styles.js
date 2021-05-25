@@ -13,7 +13,7 @@ const buttonStyles = css`
 
 const Container = styled.header`
   position: fixed;
-  z-index: ${(props) => props.theme.levels.top};
+  z-index: ${(props) => props.theme.levels.nav};
   width: 100%;
   padding: 1rem;
   background: ${(props) => props.theme.palette.transparency};

@@ -2,26 +2,22 @@
 import React from 'react';
 
 // Library imports
-import { motion } from 'framer-motion';
 
 // Component imports
 import Cover from '../../components/Cover';
 
 // Style imports
 import { Container } from './styles';
+import Curtain from '../../components/Curtain';
 
 /**
  * The main page.
  */
 const Main = () => {
   return (
-    <Container
-      as={motion.main}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-    >
+    <Container>
+      <Curtain />
+
       <Cover />
     </Container>
   );

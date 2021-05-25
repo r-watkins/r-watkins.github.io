@@ -1,12 +1,13 @@
 // React imports
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Library imports
-import { motion } from 'framer-motion';
 
 // Component imports
+import Curtain from '../../components/Curtain';
 
 // Style imports
+import { useTheme } from 'styled-components';
 import {
   Container,
   Article,
@@ -29,18 +30,31 @@ import Document from '../../assets/Resume.pdf';
  * The main page.
  */
 const Resume = () => {
+  const theme = useTheme();
+  const breakpoint = theme.navBreak;
+
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWidth(window.innerWidth);
+    };
+    window.addEventListener('resize', handleWindowResize);
+
+    // Return a function from the effect that removes the event listener
+    return () => window.removeEventListener('resize', handleWindowResize);
+  }, []);
+
   return (
-    <Container
-      as={motion.main}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <Title>
-        <h3>Resume</h3>
-        <Divider />
-      </Title>
+    <Container>
+      <Curtain />
+
+      {width < breakpoint && (
+        <Title>
+          <h3>Resume</h3>
+          <Divider />
+        </Title>
+      )}
 
       <Article>
         <Header>

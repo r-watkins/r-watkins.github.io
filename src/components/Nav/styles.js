@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Container = styled.nav`
   position: fixed;
   top: 0;
-  z-index: ${(props) => props.theme.levels.top};
+  z-index: ${(props) => props.theme.levels.nav};
   display: flex;
   align-items: center;
   justify-content: center;

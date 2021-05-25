@@ -8,18 +8,21 @@ export const GlobalStyle = createGlobalStyle`
   body,
   #root {
     height: 100%;
-    overflow: hidden;
     font-family: ${theme.font.primary};
   }
 
   body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
     background-color: ${theme.palette.background};
     font-size: ${theme.font.baseSize};
     font-weight: 300;
     letter-spacing: 1px;
+  }
+
+  #root {
+    position: relative;
+    overflow: hidden;
   }
 
   h1, h2, h3, h4, h5, h6, p {

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Container = styled.main`
+const Container = styled.article`
   width: 100%;
   height: 100%;
   padding-block-start: ${(props) => props.theme.spacing.topGutter};

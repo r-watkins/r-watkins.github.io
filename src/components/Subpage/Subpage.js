@@ -14,7 +14,9 @@ import WorkFour from '../../pages/subpages/Work04';
 
 // Style imports
 import { useTheme } from 'styled-components';
-import { Container, Row } from './styles';
+import { Row } from './styles';
+import { Backdrop } from '../../components/common/Backdrop/styles';
+import background from '../../styles/images/backdrop-works-one.svg';
 
 /**
  * Subpage container for the works articles.
@@ -38,7 +40,7 @@ const Subpage = () => {
   }, []);
 
   return (
-    <Container>
+    <Backdrop background={background}>
       <Curtain />
 
       {width > breakpoint && <Subnav selected={location} />}
@@ -54,7 +56,7 @@ const Subpage = () => {
 
         {id === 'make-it-pop' && <WorkFour />}
       </Row>
-    </Container>
+    </Backdrop>
   );
 };
 

@@ -109,6 +109,7 @@ const Portrait = styled.figure`
 
   @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
     top: 53%;
+    left: -50px;
     transform: translateY(-50%) scale(0.45);
   }
 `;

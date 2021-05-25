@@ -33,7 +33,7 @@ const Name = styled.h1`
 
   @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
     margin-inline-start: 1rem;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
 `;
 
@@ -52,8 +52,9 @@ const Job = styled.h2`
   }
 
   @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
-    font-size: 1rem;
-    margin-block-start: 21rem;
+    font-size: 1.5rem;
+    margin-block-start: 22rem;
+    margin-inline-start: 3rem;
   }
 `;
 
@@ -88,7 +89,7 @@ const Divider = styled.div`
   @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
     height: ${(props) => props.theme.divider.height.sm};
     margin-block-start: ${(props) => props.theme.divider.spacing.sm};
-    width: 10rem;
+    width: 15.5rem;
   }
 `;
 
@@ -107,7 +108,7 @@ const Portrait = styled.figure`
   }
 
   @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
-    top: 50%;
+    top: 53%;
     transform: translateY(-50%) scale(0.45);
   }
 `;

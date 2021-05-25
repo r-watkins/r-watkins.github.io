@@ -7,18 +7,20 @@ import React from 'react';
 import Curtain from '../../components/Curtain';
 
 // Style imports
-import { Container, Content, Images, Image } from './styles';
+import { Content, Images, Image } from './styles';
 import { Title } from '../../components/common/Title/styles';
 import { Divider } from '../../components/common/Divider/styles';
+import { Backdrop } from '../../components/common/Backdrop/styles';
 import Photo from '../../styles/images/photo01.jpg';
 import Frame from '../../styles/images/photo-frame.svg';
+import background from '../../styles/images/backdrop-about.svg';
 
 /**
  * The about page.
  */
 const About = () => {
   return (
-    <Container>
+    <Backdrop background={background}>
       <Curtain />
 
       <Title>
@@ -44,7 +46,7 @@ const About = () => {
           <Image src={Photo} alt="Ryan Watkins" />
         </Images>
       </Content>
-    </Container>
+    </Backdrop>
   );
 };
 

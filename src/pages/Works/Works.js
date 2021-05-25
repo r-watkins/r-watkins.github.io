@@ -7,17 +7,18 @@ import React from 'react';
 import Grid from '../../components/Grid';
 
 // Style imports
-import { Container } from './styles';
+import { Backdrop } from '../../components/common/Backdrop/styles';
 import { Divider } from '../../components/common/Divider/styles';
 import { Title } from '../../components/common/Title/styles';
 import Curtain from '../../components/Curtain';
+import background from '../../styles/images/backdrop-works.svg';
 
 /**
  * The selected works page.
  */
 const Works = () => {
   return (
-    <Container>
+    <Backdrop background={background}>
       <Curtain />
 
       <Title>
@@ -26,7 +27,7 @@ const Works = () => {
       </Title>
 
       <Grid />
-    </Container>
+    </Backdrop>
   );
 };
 

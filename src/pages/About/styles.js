@@ -1,18 +1,5 @@
 import styled from 'styled-components';
 
-import Backdrop from '../../styles/images/backdrop-about.svg';
-
-const Container = styled.main`
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
-  background-image: url(${Backdrop});
-  background-color: ${(props) => props.theme.palette.background};
-  background-size: cover;
-  background-repeat: no-repeat;
-`;
-
 const Content = styled.section`
   display: flex;
   align-items: center;
@@ -62,4 +49,4 @@ const Image = styled.img`
   height: 22rem;
 `;
 
-export { Container, Content, Images, Image };
+export { Content, Images, Image };

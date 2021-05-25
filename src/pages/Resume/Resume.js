@@ -8,7 +8,6 @@ import Curtain from '../../components/Curtain';
 
 // Style imports
 import {
-  Container,
   Article,
   Header,
   Info,
@@ -20,16 +19,18 @@ import {
   SectionBlockHeader,
 } from './styles';
 import { Divider } from '../../components/common/Divider/styles';
+import { Backdrop } from '../../components/common/Backdrop/styles';
 import PrintIcon from '../../styles/images/print-icon.svg';
+import background from '../../styles/images/backdrop-resume.svg';
 
 import Document from '../../assets/Resume.pdf';
 
 /**
- * The main page.
+ * The resume page.
  */
 const Resume = () => {
   return (
-    <Container>
+    <Backdrop background={background}>
       <Curtain />
 
       <Article>
@@ -370,7 +371,7 @@ const Resume = () => {
           </div>
         </Section>
       </Article>
-    </Container>
+    </Backdrop>
   );
 };
 

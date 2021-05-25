@@ -7,19 +7,20 @@ import React from 'react';
 import Cover from '../../components/Cover';
 
 // Style imports
-import { Container } from './styles';
+import { Backdrop } from '../../components/common/Backdrop/styles';
 import Curtain from '../../components/Curtain';
+import background from '../../styles/images/backdrop.svg';
 
 /**
  * The main page.
  */
 const Main = () => {
   return (
-    <Container>
+    <Backdrop background={background}>
       <Curtain />
 
       <Cover />
-    </Container>
+    </Backdrop>
   );
 };
 

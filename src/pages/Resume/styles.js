@@ -1,18 +1,5 @@
 import styled from 'styled-components';
 
-import Backdrop from '../../styles/images/backdrop-resume.svg';
-
-const Container = styled.main`
-  overflow-y: auto;
-  width: 100%;
-  height: 100%;
-  background-image: url(${Backdrop});
-  background-color: ${(props) => props.theme.palette.background};
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-`;
-
 const Article = styled.article`
   width: ${(props) => props.theme.size.base};
   box-sizing: border-box;
@@ -123,7 +110,6 @@ const SectionBlockHeader = styled.p`
 `;
 
 export {
-  Container,
   Article,
   Header,
   Divider,

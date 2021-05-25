@@ -24,7 +24,6 @@ const Container = styled.section`
     grid-row-gap: 2rem;
     width: ${(props) => props.theme.size.md};
     margin: auto;
-    padding-block-start: 8rem;
   }
 `;
 

@@ -12,20 +12,12 @@ const Title = styled.section`
   }
 
   @media only screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
-    position: fixed;
-    top: 0.5rem;
-    left: 6rem;
-    z-index: ${(props) => props.theme.levels.title};
-    padding: 0;
-    margin: 0;
+    padding-block-start: 7rem;
   }
 
   @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
-    top: 1rem;
-    left: 5rem;
-    z-index: ${(props) => props.theme.levels.title};
-    padding: 0;
-    margin: 0;
+    margin-block-end: 2rem;
+    padding-block-start: 6rem;
   }
 `;
 

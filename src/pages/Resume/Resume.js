@@ -1,5 +1,5 @@
 // React imports
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 // Library imports
 
@@ -7,7 +7,6 @@ import React, { useState, useEffect } from 'react';
 import Curtain from '../../components/Curtain';
 
 // Style imports
-import { useTheme } from 'styled-components';
 import {
   Container,
   Article,
@@ -20,7 +19,6 @@ import {
   SectionBlock,
   SectionBlockHeader,
 } from './styles';
-import { Title } from '../../components/common/Title/styles';
 import { Divider } from '../../components/common/Divider/styles';
 import PrintIcon from '../../styles/images/print-icon.svg';
 
@@ -30,31 +28,9 @@ import Document from '../../assets/Resume.pdf';
  * The main page.
  */
 const Resume = () => {
-  const theme = useTheme();
-  const breakpoint = theme.navBreak;
-
-  const [width, setWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleWindowResize = () => {
-      setWidth(window.innerWidth);
-    };
-    window.addEventListener('resize', handleWindowResize);
-
-    // Return a function from the effect that removes the event listener
-    return () => window.removeEventListener('resize', handleWindowResize);
-  }, []);
-
   return (
     <Container>
       <Curtain />
-
-      {width < breakpoint && (
-        <Title>
-          <h3>Resume</h3>
-          <Divider />
-        </Title>
-      )}
 
       <Article>
         <Header>

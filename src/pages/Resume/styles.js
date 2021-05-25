@@ -26,6 +26,7 @@ const Article = styled.article`
 
   @media only screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
     width: 100%;
+    padding-block-start: 7rem;
   }
 
   @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {

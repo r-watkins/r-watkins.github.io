@@ -5,6 +5,7 @@ import Backdrop from '../../styles/images/backdrop-about.svg';
 const Container = styled.main`
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
   overflow-y: auto;
   background-image: url(${Backdrop});
   background-color: ${(props) => props.theme.palette.background};
@@ -27,6 +28,7 @@ const Content = styled.section`
 
   @media only screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
     flex-direction: column-reverse;
+    justify-content: flex-end;
   }
 
   @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
@@ -42,15 +44,15 @@ const Images = styled.div`
   margin-inline-start: 5rem;
 
   @media only screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
+    margin-block-start: -2rem;
     margin-block-end: 3rem;
     margin-inline-start: 0;
-    padding-block-start: 6rem;
   }
 
   @media only screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
     transform: scale(0.7);
-    margin-block-end: 1rem;
-    padding-block-start: 3rem;
+    margin-block-start: -4rem;
+    margin-block-end: -2rem;
   }
 `;
 

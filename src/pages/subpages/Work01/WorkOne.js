@@ -169,8 +169,10 @@ const WorkOne = () => {
       <br />
 
       <p>
-        The IRWIN apps are marked as the catalyst and starting point of
-        Calcite-React.
+        The IRWIN apps mark the starting point of Calcite-React, a React build
+        of Esri's in-house design system and component library. Calcite-React
+        preceded Calcite-Components which is Esri's current component library
+        that is framework agnostic.
       </p>
 
       <br />

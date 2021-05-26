@@ -88,15 +88,6 @@ const WorkThree = () => {
       </p>
 
       <br />
-
-      <p>
-        And the code here:{' '}
-        <a href="https://github.com/EsriPS/calcite-ui-icons-react">
-          github.com/EsriPS/calcite-ui-icons-react
-        </a>
-      </p>
-
-      <br />
     </Article>
   );
 };

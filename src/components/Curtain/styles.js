@@ -10,6 +10,10 @@ const Container = styled.div`
   justify-content: center;
   width: 1920px;
   height: 1280px;
+
+  & svg {
+    fill: ${(props) => props.theme.palette.background};
+  }
 `;
 
 export { Container };

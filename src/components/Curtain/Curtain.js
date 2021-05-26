@@ -34,7 +34,6 @@ const Curtain = () => {
         <path
           d="M0,.086,960-100,1920,.086V1180L960,1080,0,1180Z"
           transform="translate(0 100)"
-          fill="#191919"
         />
       </svg>
     </Container>

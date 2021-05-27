@@ -1,5 +1,5 @@
 // React imports
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 // Library imports
 import { useLocation, useParams } from 'react-router-dom';
@@ -13,7 +13,6 @@ import WorkThree from '../../pages/subpages/Work03';
 import WorkFour from '../../pages/subpages/Work04';
 
 // Style imports
-import { useTheme } from 'styled-components';
 import { Row } from './styles';
 import { Backdrop } from '../../components/common/Backdrop/styles';
 import background from '../../styles/images/backdrop-works-one.svg';
@@ -21,29 +20,15 @@ import background from '../../styles/images/backdrop-works-one.svg';
 /**
  * Subpage container for the works articles.
  */
-const Subpage = () => {
+const Subpage = (props) => {
   const location = useLocation();
   const { id } = useParams();
-  const theme = useTheme();
-  const breakpoint = theme.navBreak;
-
-  const [width, setWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleWindowResize = () => {
-      setWidth(window.innerWidth);
-    };
-    window.addEventListener('resize', handleWindowResize);
-
-    // Return a function from the effect that removes the event listener
-    return () => window.removeEventListener('resize', handleWindowResize);
-  }, []);
 
   return (
     <Backdrop background={background}>
       <Curtain />
 
-      {width > breakpoint && <Subnav selected={location} />}
+      {!props.breakpoint && <Subnav selected={location} />}
 
       <Row>
         <div aria-hidden="true"></div>

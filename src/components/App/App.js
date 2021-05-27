@@ -1,5 +1,5 @@
 // React imports
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Library imports
 import { Switch, Route, useLocation } from 'react-router-dom';
@@ -24,12 +24,27 @@ import '../../styles/font.css';
  */
 function App() {
   const location = useLocation();
+  const breakpoint = theme.navBreak;
+
+  const [navBreak, setNavBreak] = useState(
+    window.innerWidth <= breakpoint ? true : false
+  );
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setNavBreak(window.innerWidth <= breakpoint ? true : false);
+    };
+    window.addEventListener('resize', handleWindowResize);
+
+    // Return a function from the effect that removes the event listener
+    return () => window.removeEventListener('resize', handleWindowResize);
+  }, [breakpoint]);
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
 
-      <Nav selected={location} />
+      <Nav selected={location} breakpoint={navBreak} />
 
       <AnimatePresence exitBeforeEnter initial={false}>
         <Switch location={location} key={location.pathname}>
@@ -37,7 +52,10 @@ function App() {
 
           <Route path="/works" component={Works} />
 
-          <Route path="/work/:id" component={Subpage} />
+          <Route
+            path="/work/:id"
+            component={() => <Subpage breakpoint={navBreak} />}
+          />
 
           <Route path="/resume" component={Resume} />
 

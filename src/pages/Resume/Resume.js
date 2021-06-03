@@ -46,11 +46,6 @@ const Resume = () => {
               <Icon src={PrintIcon} alt="Print Link Icon"></Icon>
               <p>Print</p>
             </Print>
-
-            <div>
-              <p>rwatkins@esri.com</p>
-              <p>909 793 2853 x5012</p>
-            </div>
           </Info>
         </Header>
 

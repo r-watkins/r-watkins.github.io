@@ -15,11 +15,11 @@ const Nav = (props) => {
   const { selected } = props;
 
   const resolveWorksPath = (path) => {
-    const workspath = matchPath(path, {
+    const workspath = matchPath({
       path: '/work/:id',
       exact: true,
       strict: false,
-    });
+    }, path);
 
     if (workspath || path === '/works') {
       return true;

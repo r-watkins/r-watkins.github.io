@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 
 // Library imports
-import { Switch, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
 // Component imports
@@ -47,20 +47,20 @@ function App() {
       <Nav selected={location} breakpoint={navBreak} />
 
       <AnimatePresence exitBeforeEnter initial={false}>
-        <Switch location={location} key={location.pathname}>
-          <Route exact path="/" component={Main} />
+        <Routes location={location} key={location.pathname}>
+          <Route exact path="/" element={<Main />} />
 
-          <Route path="/works" component={Works} />
+          <Route path="/works" element={<Works />} />
 
           <Route
             path="/work/:id"
-            component={() => <Subpage breakpoint={navBreak} />}
+            element={<Subpage breakpoint={navBreak} />}
           />
 
-          <Route path="/resume" component={Resume} />
+          <Route path="/resume" element={<Resume />} />
 
-          <Route path="/about" component={About} />
-        </Switch>
+          <Route path="/about" element={<About />} />
+        </Routes>
       </AnimatePresence>
     </ThemeProvider>
   );

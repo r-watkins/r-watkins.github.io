@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 
 // Library imports
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router';
 import { AnimatePresence } from 'framer-motion';
 
 // Component imports

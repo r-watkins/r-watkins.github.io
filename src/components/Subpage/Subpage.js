@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Library imports
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router';
 
 // Component imports
 import Subnav from '../Subnav';

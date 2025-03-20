@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { PageLink as SubnavLink } from '../Subnav/styles';
 
 const buttonStyles = css`

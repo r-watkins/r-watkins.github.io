@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 const Container = styled.nav`
   position: fixed;

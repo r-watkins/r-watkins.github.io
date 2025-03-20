@@ -8,12 +8,14 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1920px;
-  height: 1280px;
-
-  & svg {
-    fill: ${(props) => props.theme.palette.background};
-  }
+  width: 100%;
+  height: 100%;
 `;
 
-export { Container };
+const Cover = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-color: ${(props) => props.theme.palette.background};
+`;
+
+export { Container, Cover };

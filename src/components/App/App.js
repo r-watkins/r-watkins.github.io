@@ -46,7 +46,7 @@ function App() {
 
       <Nav selected={location} breakpoint={navBreak} />
 
-      <AnimatePresence exitBeforeEnter initial={false}>
+      <AnimatePresence exitBeforeEnter initial={false} mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route exact path="/" element={<Main />} />
 

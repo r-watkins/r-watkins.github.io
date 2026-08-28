@@ -1,8 +1,8 @@
 ---
 id: portfolio-page
-current_task: 3
+current_task: 4
 current_task_status: pending-approval
-last_commit: 160a8d8
+last_commit: e731e35
 autonomy: ask
 ---
 
@@ -73,8 +73,8 @@ notes: |
   the root tsconfig.json only had `references` with no `compilerOptions`.
 
 ## Task 3: Add @fontsource/montserrat and wire it as the theme font
-status: pending-approval
-commit: null
+status: complete
+commit: e731e35
 tests: passed (npm run build succeeds; compiled CSS confirmed to reference 'Montserrat Variable' as font-sans; Montserrat woff2 files bundled into dist/assets, replacing the Geist ones)
 notes: |
   Used @fontsource-variable/montserrat (not the static-weights
@@ -87,10 +87,30 @@ notes: |
   html's existing font-sans utility class from Task 2's shadcn base layer).
 
 ## Task 4: Build ThemeProvider (system-preference default) and ModeToggle
-status: pending
+status: pending-approval
 commit: null
-tests: not-run
-notes:
+tests: passed (npm run build succeeds; browser-verified live via Playwright against `npm run dev`: first load matches OS prefers-color-scheme in both light and dark, dropdown toggle switches html class + body background color, choice persists in localStorage["portfolio-ui-theme"] across reload; zero console errors; screenshot confirms correct B&W dark-mode rendering with Montserrat)
+notes: |
+  Added src/components/theme-provider.tsx (standard shadcn Vite dark-mode
+  pattern: React Context, localStorage key "portfolio-ui-theme", "system"
+  default reads window.matchMedia("(prefers-color-scheme: dark)")) and
+  src/components/mode-toggle.tsx (Sun/Moon lucide icons in a shadcn
+  DropdownMenu with Light/Dark/System items). Added
+  src/components/ui/dropdown-menu.tsx via `npx shadcn@latest add
+  dropdown-menu` (Base UI's Menu primitive, per Task 2's Base UI choice --
+  used Base UI's `render` prop for trigger composition instead of Radix's
+  `asChild`, and plain `onClick` on DropdownMenuItem, both confirmed against
+  @base-ui/react's type defs). Wired ThemeProvider around <App/> in
+  main.tsx; App.tsx temporarily renders <ModeToggle/> for verification (will
+  move into the real nav in Task 5).
+  Minor enhancement beyond the base shadcn pattern: added a
+  matchMedia("change") listener while theme === "system" so the page
+  re-syncs live if the OS theme changes while the tab is open, not just on
+  next mount.
+  Verified in a real headless-Chromium browser via Playwright (chromium-cli
+  wasn't available in this Windows/Git Bash environment; Playwright with an
+  already-cached Chromium build was used instead) rather than just a build
+  check, per the UI-verification requirement.
 
 ## Task 5: Build sticky nav with scroll-to-section and active-section highlighting
 status: pending

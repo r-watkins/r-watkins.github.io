@@ -1,8 +1,8 @@
 ---
 id: portfolio-page
-current_task: 4
+current_task: 5
 current_task_status: pending-approval
-last_commit: e731e35
+last_commit: 0bc87d2
 autonomy: ask
 ---
 
@@ -87,8 +87,8 @@ notes: |
   html's existing font-sans utility class from Task 2's shadcn base layer).
 
 ## Task 4: Build ThemeProvider (system-preference default) and ModeToggle
-status: pending-approval
-commit: null
+status: complete
+commit: 0bc87d2
 tests: passed (npm run build succeeds; browser-verified live via Playwright against `npm run dev`: first load matches OS prefers-color-scheme in both light and dark, dropdown toggle switches html class + body background color, choice persists in localStorage["portfolio-ui-theme"] across reload; zero console errors; screenshot confirms correct B&W dark-mode rendering with Montserrat)
 notes: |
   Added src/components/theme-provider.tsx (standard shadcn Vite dark-mode
@@ -113,10 +113,30 @@ notes: |
   check, per the UI-verification requirement.
 
 ## Task 5: Build sticky nav with scroll-to-section and active-section highlighting
-status: pending
+status: pending-approval
 commit: null
-tests: not-run
-notes:
+tests: passed (npm run build succeeds; browser-verified live via Playwright against `npm run dev`: initial load highlights About, clicking each nav item smooth-scrolls to exactly nav-height offset and highlights that item, manual scroll back to top re-highlights About, click-from-bottom scrolls back to top; zero console errors; screenshot confirms correct highlight + scroll position)
+notes: |
+  Added src/hooks/use-active-section.ts (IntersectionObserver-based:
+  observes each section id with rootMargin "-96px 0px -60% 0px" so the
+  "active" section is whichever occupies a band just below the sticky nav;
+  maintains a Set of currently-intersecting ids and picks the first in
+  DOM/array order, avoiding flicker when two sections both technically
+  intersect during a transition) and src/components/nav.tsx (sticky nav,
+  native `window.scrollTo({ top, behavior: "smooth" })` offset by the nav's
+  64px height -- no react-scroll or similar library, matching research's
+  "no routing library" decision). aria-label="Primary" on <nav>,
+  aria-current="true" on the active nav button, per design decision #5
+  (accessibility landmarks).
+  Rewrote App.tsx to render <Nav/> plus three placeholder <section id="about"
+  | "sample-works" | "side-projects" aria-label="..."> stubs (min-h-screen,
+  single line of placeholder text) so the scroll/highlight behavior could be
+  tested end-to-end. These section wrapper elements (id, aria-label,
+  min-h-screen) are the real structure Tasks 6-7 will fill in -- only the
+  inner content changes, not the wrapper. ModeToggle moved from App.tsx's
+  standalone placeholder into the real Nav.
+  Verified in a real headless-Chromium browser via Playwright (same
+  approach as Task 4), not just a build check.
 
 ## Task 6: Build About section (circular hero image + bio text)
 status: pending

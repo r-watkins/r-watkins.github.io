@@ -1,8 +1,8 @@
 ---
 id: portfolio-page
-current_task: 6
+current_task: 7
 current_task_status: pending-approval
-last_commit: 99ddb45
+last_commit: 6dd7479
 autonomy: ask
 ---
 
@@ -139,8 +139,8 @@ notes: |
   approach as Task 4), not just a build check.
 
 ## Task 6: Build About section (circular hero image + bio text)
-status: pending-approval
-commit: null
+status: complete
+commit: 6dd7479
 tests: passed (npm run build succeeds; browser-verified live via Playwright/Chromium against `npm run dev`: screenshotted at desktop 1280px, mobile 375px, and dark mode; zero console errors)
 notes: |
   Added src/components/about-section.tsx: circular hero image (picsum.photos
@@ -160,19 +160,42 @@ notes: |
   design.md's scope. Flagging for Task 9's final responsive pass rather than
   cascading into this task's diff.
 
-## Task 7: Build placeholder project data, ProjectCard, and ProjectSection
+## Task 7: Add mobile nav menu (hamburger + dropdown panel)
+status: pending-approval
+commit: null
+tests: passed (npm run build succeeds; browser-verified live via Playwright at the narrowest common phone width (320px) and desktop (1280px): horizontal links hidden and hamburger shown below sm, panel opens with aria-expanded toggling true/false, clicking a link in the panel scrolls to the section AND closes the panel, clicking outside the panel closes it, Escape closes it, desktop layout (links + toggle, no hamburger) fully unaffected; zero console errors)
+notes: |
+  Added post-Task-6 per user request, not in original design.md checklist.
+  Follows up on the mobile nav overflow observed during Task 6's browser
+  verification at 375px. Dropdown-panel style (not a slide-in sheet), per
+  user's choice.
+
+  Rewrote nav.tsx: horizontal <ul> now `hidden sm:flex`; ModeToggle in the
+  top bar now `hidden sm:block`; new hamburger Button (lucide Menu/X icons,
+  sm:hidden) toggles isMenuOpen state. When open, a panel renders below the
+  nav bar (sm:hidden, so it's inert even if isMenuOpen were somehow true
+  above the breakpoint) with the same NAV_ITEMS stacked vertically plus a
+  second <ModeToggle/> instance -- moved into the panel rather than kept
+  floating in the collapsed top bar, so the mobile top bar is just the
+  hamburger (uncluttered, directly fixing the crowding Task 6 flagged).
+  scrollToSection now also closes the menu after scrolling. Close-on-outside-
+  click uses a pointerdown listener checking the click target against a
+  navRef wrapping the whole <nav>; close-on-Escape via a keydown listener;
+  both only attached while isMenuOpen (removed on close/unmount).
+
+## Task 8: Build placeholder project data, ProjectCard, and ProjectSection
 status: pending
 commit: null
 tests: not-run
 notes:
 
-## Task 8: Build bottom-aligned crossfading background layer
+## Task 9: Build bottom-aligned crossfading background layer
 status: pending
 commit: null
 tests: not-run
 notes:
 
-## Task 9: Final accessibility, dependency cleanup, and build verification pass
+## Task 10: Final accessibility, dependency cleanup, and build verification pass
 status: pending
 commit: null
 tests: not-run

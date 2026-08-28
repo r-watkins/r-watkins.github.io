@@ -1,14 +1,14 @@
 ---
 id: portfolio-page
-current_task: 1
+current_task: 2
 current_task_status: pending-approval
-last_commit: null
+last_commit: 065e791
 autonomy: ask
 ---
 
 ## Task 1: Scaffold Vite + React + TypeScript, remove legacy CRA source and deps
-status: pending-approval
-commit: null
+status: complete
+commit: 065e791
 tests: passed (npm run build succeeds: tsc -b + vite build; npm run dev verified serving via curl)
 notes: |
   Deleted all of old src/** (multi-route CRA app, styled-components, framer-motion)
@@ -32,10 +32,45 @@ notes: |
   upcoming native config loader default.
 
 ## Task 2: Install and configure Tailwind CSS v4 + shadcn/ui
-status: pending
+status: pending-approval
 commit: null
-tests: not-run
-notes:
+tests: passed (npm run build succeeds with Button component + Tailwind utility rendered; dev server verified via curl serving compiled App.tsx and Tailwind CSS layers)
+notes: |
+  Installed tailwindcss v4 + @tailwindcss/vite, wired the plugin into
+  vite.config.ts, added `@import "tailwindcss";` to src/index.css.
+  Ran `npx shadcn@latest init --template vite --base base --preset nova -y`
+  (Base UI per user's choice this session -- see design.md revision).
+  Generated: components.json, src/lib/utils.ts (cn()), src/components/ui/button.tsx,
+  and a full neutral-palette (achromatic oklch, i.e. true grayscale) CSS
+  variable theme in src/index.css for both :root and .dark, satisfying the
+  black-and-white theme goal by default. Preset "Nova" also pulled in
+  @fontsource-variable/geist and lucide-react as its default font/icon
+  choices -- geist will be replaced by Montserrat in Task 3 per the user's
+  earlier decision; lucide-react stays (already the planned icon library).
+  New deps: @base-ui/react, @tailwindcss/vite, class-variance-authority,
+  clsx, lucide-react, shadcn (ships importable base Tailwind CSS reset,
+  referenced via `@import "shadcn/tailwind.css"` in index.css),
+  tailwind-merge, tw-animate-css, @fontsource-variable/geist.
+
+  Deviation from design.md (approved by user, design.md updated): shadcn's
+  CLI now supports choosing the underlying primitive library
+  (radix/base/aria); Base UI became shadcn's new default in July 2026,
+  postdating research's "Radix UI primitives" assumption. Used Base UI.
+
+  Real ecosystem incompatibility hit and resolved (approved by user):
+  TypeScript 7.0's native compiler removed the `baseUrl` config option
+  entirely, but shadcn's CLI alias resolver (both current and the 4.18.0
+  fallback it suggested) hard-requires `baseUrl` in tsconfig to know where
+  to write component files -- `shadcn init`/`add` fails regardless of `paths`
+  config without it. Downgraded typescript to 6.0.3 (latest release on the
+  classic pre-native-rewrite compiler line) and restored `baseUrl` + added
+  `"ignoreDeprecations": "6.0"` to tsconfig.app.json/tsconfig.node.json.
+  Separately (unrelated to the baseUrl fix, and the actual root cause of the
+  CLI's "Could not load the workspace config" error) also had to add
+  `compilerOptions.baseUrl`/`paths` directly to the root tsconfig.json --
+  shadcn's official Vite docs specify both tsconfig.json AND tsconfig.app.json
+  need these fields when using Vite's split solution-style tsconfig setup;
+  the root tsconfig.json only had `references` with no `compilerOptions`.
 
 ## Task 3: Add @fontsource/montserrat and wire it as the theme font
 status: pending

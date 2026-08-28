@@ -29,7 +29,19 @@ retargeted from `build/` to `dist/`.
   (`@theme`, `@custom-variant dark`) rather than a `tailwind.config.js`.
 - **shadcn/ui** scaffolded via `npx shadcn@latest init`, components added
   individually as needed (`button`, `card`, `badge`, `separator`,
-  `dropdown-menu`, `avatar`).
+  `dropdown-menu`, `avatar`). **Revised during Task 2**: shadcn's CLI now
+  lets you choose the underlying headless primitive library
+  (`--base radix|base|aria`); Base UI became shadcn's new default in July
+  2026 (community-preferred 2:1 over Radix, which research's original
+  "Radix UI primitives" assumption predates). Per the user, this project
+  uses **Base UI**, not Radix.
+  **Also revised during Task 2**: TypeScript was pinned to `6.0.3` instead of
+  the newest `7.0.x` line. TS 7.0's native compiler removed the `baseUrl`
+  config option, which the shadcn CLI's alias resolver requires to write
+  component files — `shadcn init`/`add` fails under TS7 regardless of `paths`
+  config. Per the user, downgraded to TS 6.0.3 (latest pre-native-rewrite
+  release) to keep the shadcn CLI functional; TS7 can be revisited once
+  ecosystem tooling catches up.
 - **`motion`** (not `framer-motion`) for the hero entrance, card
   hover/enter, and the section background crossfade via `useInView`.
 - **No routing library** — `scrollIntoView({ behavior: 'smooth', block: 'start' })`
@@ -126,7 +138,7 @@ Everything under the old `src/` (all `components/`, `pages/`, `styles/`,
 
 ## Task checklist
 
-- [ ] Task 1: Scaffold Vite + React + TypeScript, remove legacy CRA source and deps — delete all of current `src/**`; add `vite.config.ts`, `tsconfig*.json`, `index.html`, minimal `src/main.tsx`/`src/App.tsx`/`src/index.css`; rewrite `package.json` (remove `react-scripts`, `react-router`, `react-router-dom`, `@types/react-router-dom`, `styled-components`, `framer-motion`; add `vite`, `@vitejs/plugin-react`, `typescript`, `@types/react`, `@types/react-dom`); update `deploy` script to `gh-pages -d dist`. Verify: `npm run dev` serves a blank page, `npm run build` succeeds.
+- [x] Task 1: Scaffold Vite + React + TypeScript, remove legacy CRA source and deps — delete all of current `src/**`; add `vite.config.ts`, `tsconfig*.json`, `index.html`, minimal `src/main.tsx`/`src/App.tsx`/`src/index.css`; rewrite `package.json` (remove `react-scripts`, `react-router`, `react-router-dom`, `@types/react-router-dom`, `styled-components`, `framer-motion`; add `vite`, `@vitejs/plugin-react`, `typescript`, `@types/react`, `@types/react-dom`); update `deploy` script to `gh-pages -d dist`. Verify: `npm run dev` serves a blank page, `npm run build` succeeds.
 - [ ] Task 2: Install and configure Tailwind CSS v4 + shadcn/ui — add `tailwindcss`/`@tailwindcss/vite`, wire the plugin into `vite.config.ts`, set up `src/index.css` with `@theme`/`@custom-variant dark` and the `@` path alias in `tsconfig.app.json`; run `shadcn init` to generate `components.json` + `src/lib/utils.ts`. Verify: a Tailwind utility class and one shadcn component (e.g. Button) render correctly.
 - [ ] Task 3: Add `@fontsource/montserrat`, wire it as the theme's `font-sans` token in `index.css`, apply to `body`. Verify: rendered text visually uses Montserrat.
 - [ ] Task 4: Build `ThemeProvider` (system-preference default via `matchMedia`, persisted to `localStorage`, toggles a class on `<html>`) and `ModeToggle` (shadcn dropdown + lucide-react Sun/Moon), wired into `main.tsx`/`App.tsx`. Verify: toggle switches themes, first load matches OS preference, choice persists across reload.

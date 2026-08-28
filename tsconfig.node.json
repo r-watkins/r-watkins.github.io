@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2023",
+    "ignoreDeprecations": "6.0",
     "lib": ["ES2023"],
     "module": "ESNext",
     "types": ["node"],
@@ -16,6 +17,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
 
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     }

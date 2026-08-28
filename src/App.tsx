@@ -1,3 +1,4 @@
+import { AboutSection } from "@/components/about-section";
 import { Nav } from "@/components/nav";
 
 function App() {
@@ -5,13 +6,7 @@ function App() {
     <>
       <Nav />
       <main>
-        <section
-          id="about"
-          aria-label="About"
-          className="flex min-h-screen items-center justify-center"
-        >
-          <p className="text-lg font-medium">About section placeholder</p>
-        </section>
+        <AboutSection />
         <section
           id="sample-works"
           aria-label="Sample Works"

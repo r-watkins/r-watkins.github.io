@@ -1,8 +1,8 @@
 ---
 id: portfolio-page
-current_task: 5
+current_task: 6
 current_task_status: pending-approval
-last_commit: 0bc87d2
+last_commit: 99ddb45
 autonomy: ask
 ---
 
@@ -113,8 +113,8 @@ notes: |
   check, per the UI-verification requirement.
 
 ## Task 5: Build sticky nav with scroll-to-section and active-section highlighting
-status: pending-approval
-commit: null
+status: complete
+commit: 99ddb45
 tests: passed (npm run build succeeds; browser-verified live via Playwright against `npm run dev`: initial load highlights About, clicking each nav item smooth-scrolls to exactly nav-height offset and highlights that item, manual scroll back to top re-highlights About, click-from-bottom scrolls back to top; zero console errors; screenshot confirms correct highlight + scroll position)
 notes: |
   Added src/hooks/use-active-section.ts (IntersectionObserver-based:
@@ -139,10 +139,26 @@ notes: |
   approach as Task 4), not just a build check.
 
 ## Task 6: Build About section (circular hero image + bio text)
-status: pending
+status: pending-approval
 commit: null
-tests: not-run
-notes:
+tests: passed (npm run build succeeds; browser-verified live via Playwright/Chromium against `npm run dev`: screenshotted at desktop 1280px, mobile 375px, and dark mode; zero console errors)
+notes: |
+  Added src/components/about-section.tsx: circular hero image (picsum.photos
+  seeded URL per design decision #1, grayscale filter to match the B&W
+  theme), heading with the real name "Ryan Watkins" (treated as immutable
+  site identity, not placeholder data -- matches index.html's <title> from
+  Task 1), and a placeholder bio paragraph written as readable filler prose
+  (not lorem-ipsum gibberish) per design decision #3's "full placeholder
+  content". Side-by-side layout on sm+ (flex-row), stacked/centered on
+  mobile (flex-col). Replaced App.tsx's About placeholder stub with the real
+  <AboutSection/>; Sample Works / Side Projects remain stubs for Task 7.
+
+  Observed but NOT fixed (out of this task's scope -- nav.tsx is Task 5's
+  file): at very narrow widths (375px) the nav's three links + mode toggle
+  fit with almost no breathing room and would likely wrap or overflow on
+  narrower phones (~320px). No mobile nav collapse/hamburger was in
+  design.md's scope. Flagging for Task 9's final responsive pass rather than
+  cascading into this task's diff.
 
 ## Task 7: Build placeholder project data, ProjectCard, and ProjectSection
 status: pending

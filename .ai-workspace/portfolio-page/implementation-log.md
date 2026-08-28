@@ -1,8 +1,8 @@
 ---
 id: portfolio-page
-current_task: 7
+current_task: 8
 current_task_status: pending-approval
-last_commit: 6dd7479
+last_commit: 5db7c34
 autonomy: ask
 ---
 
@@ -161,8 +161,8 @@ notes: |
   cascading into this task's diff.
 
 ## Task 7: Add mobile nav menu (hamburger + dropdown panel)
-status: pending-approval
-commit: null
+status: complete
+commit: 5db7c34
 tests: passed (npm run build succeeds; browser-verified live via Playwright at the narrowest common phone width (320px) and desktop (1280px): horizontal links hidden and hamburger shown below sm, panel opens with aria-expanded toggling true/false, clicking a link in the panel scrolls to the section AND closes the panel, clicking outside the panel closes it, Escape closes it, desktop layout (links + toggle, no hamburger) fully unaffected; zero console errors)
 notes: |
   Added post-Task-6 per user request, not in original design.md checklist.
@@ -184,10 +184,23 @@ notes: |
   both only attached while isMenuOpen (removed on close/unmount).
 
 ## Task 8: Build placeholder project data, ProjectCard, and ProjectSection
-status: pending
+status: pending-approval
 commit: null
-tests: not-run
-notes:
+tests: passed (npm run build succeeds; browser-verified live via Playwright: desktop 1280px shows 4 cards per section in a grid, mobile 375px dark mode stacks single-column, each card's link has target="_blank" rel="noopener noreferrer" and the expected placeholder href; zero console errors)
+notes: |
+  Added src/data/projects.ts (Project interface + 8 entries, 4 per category,
+  per design decision #3's agreed shape) and shadcn's card + badge
+  components via `npx shadcn@latest add card badge` (Base UI-backed, same as
+  prior additions). Built src/components/project-card.tsx (whole card
+  wrapped in an <a target="_blank" rel="noopener noreferrer">, thumbnail
+  image grayscale-filtered to match the About hero and overall B&W theme,
+  CardTitle/CardDescription/tags-as-Badges) and
+  src/components/project-section.tsx (centered intro header + responsive
+  grid: 1 col mobile, 2 col sm, 4 col lg). Replaced both remaining stub
+  <section> elements in App.tsx with <ProjectSection id="sample-works" .../>
+  and <ProjectSection id="side-projects" .../>, each filtered from the same
+  projects array by category -- ids/aria-labels carried over unchanged from
+  the stubs Task 5 originally put in place.
 
 ## Task 9: Build bottom-aligned crossfading background layer
 status: pending

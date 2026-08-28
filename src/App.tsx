@@ -1,5 +1,14 @@
 import { AboutSection } from "@/components/about-section";
 import { Nav } from "@/components/nav";
+import { ProjectSection } from "@/components/project-section";
+import { projects } from "@/data/projects";
+
+const sampleWorks = projects.filter(
+  (project) => project.category === "sample-works",
+);
+const sideProjects = projects.filter(
+  (project) => project.category === "side-projects",
+);
 
 function App() {
   return (
@@ -7,20 +16,18 @@ function App() {
       <Nav />
       <main>
         <AboutSection />
-        <section
+        <ProjectSection
           id="sample-works"
-          aria-label="Sample Works"
-          className="flex min-h-screen items-center justify-center"
-        >
-          <p className="text-lg font-medium">Sample Works section placeholder</p>
-        </section>
-        <section
+          title="Sample Works"
+          intro="A selection of professional projects — click through for the full case study."
+          projects={sampleWorks}
+        />
+        <ProjectSection
           id="side-projects"
-          aria-label="Side Projects"
-          className="flex min-h-screen items-center justify-center"
-        >
-          <p className="text-lg font-medium">Side Projects section placeholder</p>
-        </section>
+          title="Side Projects"
+          intro="Smaller, more personal builds — experiments, tools, and things made for fun."
+          projects={sideProjects}
+        />
       </main>
     </>
   );

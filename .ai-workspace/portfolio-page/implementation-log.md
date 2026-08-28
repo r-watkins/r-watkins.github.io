@@ -1,8 +1,8 @@
 ---
 id: portfolio-page
-current_task: 2
+current_task: 3
 current_task_status: pending-approval
-last_commit: 065e791
+last_commit: 160a8d8
 autonomy: ask
 ---
 
@@ -32,8 +32,8 @@ notes: |
   upcoming native config loader default.
 
 ## Task 2: Install and configure Tailwind CSS v4 + shadcn/ui
-status: pending-approval
-commit: null
+status: complete
+commit: 160a8d8
 tests: passed (npm run build succeeds with Button component + Tailwind utility rendered; dev server verified via curl serving compiled App.tsx and Tailwind CSS layers)
 notes: |
   Installed tailwindcss v4 + @tailwindcss/vite, wired the plugin into
@@ -73,10 +73,18 @@ notes: |
   the root tsconfig.json only had `references` with no `compilerOptions`.
 
 ## Task 3: Add @fontsource/montserrat and wire it as the theme font
-status: pending
+status: pending-approval
 commit: null
-tests: not-run
-notes:
+tests: passed (npm run build succeeds; compiled CSS confirmed to reference 'Montserrat Variable' as font-sans; Montserrat woff2 files bundled into dist/assets, replacing the Geist ones)
+notes: |
+  Used @fontsource-variable/montserrat (not the static-weights
+  @fontsource/montserrat) to match the variable-font approach research/design
+  specified and to mirror the pattern shadcn's Nova preset already used for
+  Geist (single @import, few font files instead of many static weights).
+  Removed @fontsource-variable/geist (Nova preset's default), replaced with
+  @fontsource-variable/montserrat in src/index.css's @import list and as the
+  --font-sans value in @theme inline (both light/dark themes inherit it via
+  html's existing font-sans utility class from Task 2's shadcn base layer).
 
 ## Task 4: Build ThemeProvider (system-preference default) and ModeToggle
 status: pending

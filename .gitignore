@@ -12,6 +12,9 @@
 /dist
 *.tsbuildinfo
 
+# dev workflow scratch state
+/.ai-workspace
+
 # misc
 .DS_Store
 .env.local

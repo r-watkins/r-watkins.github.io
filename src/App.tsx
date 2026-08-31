@@ -1,4 +1,5 @@
 import { AboutSection } from "@/components/about-section";
+import { BackgroundLayer } from "@/components/background-layer";
 import { Nav } from "@/components/nav";
 import { ProjectSection } from "@/components/project-section";
 import { projects } from "@/data/projects";
@@ -13,6 +14,7 @@ const sideProjects = projects.filter(
 function App() {
   return (
     <>
+      <BackgroundLayer />
       <Nav />
       <main>
         <AboutSection />

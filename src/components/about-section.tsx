@@ -1,3 +1,5 @@
+import heroImage from "@/assets/hero.jpg";
+
 export function AboutSection() {
   return (
     <section
@@ -6,7 +8,7 @@ export function AboutSection() {
       className="flex min-h-screen flex-col items-center justify-center gap-10 px-6 py-24 sm:flex-row sm:gap-16 sm:px-12"
     >
       <img
-        src="https://picsum.photos/seed/portfolio-hero/480/480"
+        src={heroImage}
         alt="Portrait of Ryan Watkins"
         width={240}
         height={240}

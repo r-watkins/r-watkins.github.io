@@ -1,11 +1,14 @@
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
+import aboutBackground from "@/assets/backgrounds/about.jpg";
+import sampleWorksBackground from "@/assets/backgrounds/sample-works.jpg";
+import sideProjectsBackground from "@/assets/backgrounds/side-projects.jpg";
 import { useActiveSection } from "@/hooks/use-active-section";
 
 const SECTION_BACKGROUNDS: Record<string, string> = {
-  about: "https://picsum.photos/seed/bg-about/1600/900",
-  "sample-works": "https://picsum.photos/seed/bg-sample-works/1600/900",
-  "side-projects": "https://picsum.photos/seed/bg-side-projects/1600/900",
+  about: aboutBackground,
+  "sample-works": sampleWorksBackground,
+  "side-projects": sideProjectsBackground,
 };
 
 const SECTION_IDS = Object.keys(SECTION_BACKGROUNDS);
@@ -18,7 +21,7 @@ export function BackgroundLayer() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none fixed inset-x-0 bottom-0 -z-10 h-[55vh] overflow-hidden grayscale opacity-15 dark:opacity-10"
+      className="pointer-events-none fixed inset-x-0 bottom-0 -z-10 h-screen overflow-hidden grayscale opacity-15 dark:opacity-10"
     >
       <AnimatePresence>
         {activeImage && (

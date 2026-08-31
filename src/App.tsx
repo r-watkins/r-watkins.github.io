@@ -21,13 +21,13 @@ function App() {
         <ProjectSection
           id="sample-works"
           title="Sample Works"
-          intro="A selection of professional projects — click through for the full case study."
+          intro="A selection of open source projects - click through to view the repos."
           projects={sampleWorks}
         />
         <ProjectSection
           id="side-projects"
           title="Side Projects"
-          intro="Smaller, more personal builds — experiments, tools, and things made for fun."
+          intro="Passion projects - things I made for fun."
           projects={sideProjects}
         />
       </main>

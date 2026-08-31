@@ -16,9 +16,9 @@ export function ProjectSection({
     <section
       id={id}
       aria-label={title}
-      className="min-h-screen px-6 py-24 sm:px-12"
+      className="flex min-h-screen flex-col items-center justify-center px-6 py-24 sm:px-12"
     >
-      <div className="mx-auto max-w-5xl">
+      <div className="max-w-5xl">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
             {title}
@@ -26,7 +26,7 @@ export function ProjectSection({
           <p className="mt-3 text-muted-foreground">{intro}</p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 flex flex-wrap justify-center gap-6">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}

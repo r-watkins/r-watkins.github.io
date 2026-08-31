@@ -18,12 +18,14 @@ export function AboutSection() {
         <h1 className="text-3xl font-semibold tracking-tight">
           Ryan Watkins
         </h1>
+        <h3 className="text-1xl font-semibold tracking-tight">
+          Full-Stack Web - Design Systems - AI
+        </h3>
         <p className="mt-4 text-muted-foreground">
-          I&apos;m a placeholder bio — swap this paragraph out for the real
-          story: what you do, who you do it for, and what you&apos;re
-          currently building. A couple of sentences is plenty; the goal is
-          just to give a visitor a quick sense of who you are before they
-          scroll further.
+          AI Engineer and full-stack developer with 10+ years of experience building scalable web applications, 
+          developer platforms, and high-impact enterprise software. Experienced in integrating AI capabilities into 
+          production developer workflows, including AI-assisted feature development, constrained code-generation 
+          experiences, and reusable platform components.
         </p>
       </div>
     </section>

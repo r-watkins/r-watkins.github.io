@@ -1,22 +1,29 @@
-# My portfolio webpage!
+# Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+My personal portfolio site — a single-page site with sections for About,
+Sample Works, and Side Projects.
 
-## Custom components
+## Tech stack
 
-The single page app features completely custom components by me. A fun feature includes the wipe-away page transition powered by framer-motion.
+- [Vite](https://vite.dev/) — build tool and dev server
+- [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS v4](https://tailwindcss.com/) — utility-first styling, configured via CSS (`@theme`) rather than a JS config file
+- [shadcn/ui](https://ui.shadcn.com/) (on [Base UI](https://base-ui.com/) primitives) — accessible, unstyled component foundations
+- [Motion](https://motion.dev/) — the section background crossfade animation
+- [lucide-react](https://lucide.dev/) — icons
+- [Fontsource](https://fontsource.org/) — self-hosted variable Montserrat font
 
-## Mobile responsive
+## Development
 
-The page can adjust to quite a few screen sizes and has its own mobile experience.
+```bash
+npm install
+npm run dev       # start the dev server
+npm run build     # type-check and build for production
+npm run preview   # preview the production build locally
+```
 
-## Testing
+## Deployment
 
-I am currently writing tests for the page as an example use-case of Jest, Enzyme and Cypress.
-
-## Accessibility in mind
-
-The whole web should be accessible! I have laid the foundation of accessibilty within the page but you better believe I'll be testing it thoroughly to create the most accessibly friendly experience possible.
-
-### *Data Disclaimer
-The data that appears on this page has been altered to comply with NDA.
+Pushes to `main` trigger a GitHub Actions workflow that builds the site and
+publishes `dist/` to the `gh-pages` branch, served from
+[r-watkins.github.io](https://r-watkins.github.io).

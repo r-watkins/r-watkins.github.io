@@ -4,89 +4,44 @@ export interface Project {
   description: string;
   tags: string[];
   href: string;
-  thumbnail: string;
   category: "sample-works" | "side-projects";
 }
 
 export const projects: Project[] = [
   {
     id: "sample-works-1",
-    title: "Placeholder Project One",
+    title: "dev-workflow AI Plugin",
     description:
-      "A one- or two-sentence summary of the work: what it is, who it was for, and the problem it solved.",
-    tags: ["React", "TypeScript"],
-    href: "https://example.com/project-one",
-    thumbnail: "https://picsum.photos/seed/sample-works-1/640/480",
+      "A Cluade plugin that manages the software development cycle from research to design to implmentation.",
+    tags: ["AI Engineering"],
+    href: "https://github.com/r-watkins/dev-workflow-plugin",
     category: "sample-works",
   },
   {
     id: "sample-works-2",
-    title: "Placeholder Project Two",
+    title: "Fantasy Adventure AI",
     description:
-      "Swap this out for a real case study blurb — keep it short enough to scan in a card.",
-    tags: ["Design System", "Accessibility"],
-    href: "https://example.com/project-two",
-    thumbnail: "https://picsum.photos/seed/sample-works-2/640/480",
-    category: "sample-works",
-  },
-  {
-    id: "sample-works-3",
-    title: "Placeholder Project Three",
-    description:
-      "Another sample-works entry. Replace the title, description, tags, and link with the real project.",
-    tags: ["Node.js", "API"],
-    href: "https://example.com/project-three",
-    thumbnail: "https://picsum.photos/seed/sample-works-3/640/480",
-    category: "sample-works",
-  },
-  {
-    id: "sample-works-4",
-    title: "Placeholder Project Four",
-    description:
-      "Fourth placeholder entry, rounding out the Sample Works grid at its intended size.",
-    tags: ["Next.js", "Performance"],
-    href: "https://example.com/project-four",
-    thumbnail: "https://picsum.photos/seed/sample-works-4/640/480",
+      "A text based game built on top of AI enabled chat.",
+    tags: ["AI Engineering"],
+    href: "https://github.com/r-watkins/fantasy-adventure-ai",
     category: "sample-works",
   },
   {
     id: "side-projects-1",
-    title: "Placeholder Side Project One",
+    title: "Hop Fox Isle",
     description:
-      "A smaller, more personal build — a weekend experiment, a tool you made for yourself, a game jam entry.",
-    tags: ["Personal", "Open Source"],
-    href: "https://example.com/side-project-one",
-    thumbnail: "https://picsum.photos/seed/side-projects-1/640/480",
+      "A small game Android game posted on Google Play.",
+    tags: ["Unity"],
+    href: "https://play.google.com/store/apps/details?id=com.PrettyChillGames.HoppyFox&hl=en_US",
     category: "side-projects",
   },
   {
     id: "side-projects-2",
-    title: "Placeholder Side Project Two",
+    title: "Procedural Content Generation for Unity Game Development",
     description:
-      "Swap this out for a real side project blurb — what you built and why you built it.",
-    tags: ["CLI", "Rust"],
-    href: "https://example.com/side-project-two",
-    thumbnail: "https://picsum.photos/seed/side-projects-2/640/480",
-    category: "side-projects",
-  },
-  {
-    id: "side-projects-3",
-    title: "Placeholder Side Project Three",
-    description:
-      "Another side-projects entry. Replace the title, description, tags, and link with the real project.",
-    tags: ["Chrome Extension", "JavaScript"],
-    href: "https://example.com/side-project-three",
-    thumbnail: "https://picsum.photos/seed/side-projects-3/640/480",
-    category: "side-projects",
-  },
-  {
-    id: "side-projects-4",
-    title: "Placeholder Side Project Four",
-    description:
-      "Fourth placeholder entry, rounding out the Side Projects grid at its intended size.",
-    tags: ["Generative Art", "Canvas"],
-    href: "https://example.com/side-project-four",
-    thumbnail: "https://picsum.photos/seed/side-projects-4/640/480",
+      "Book on generative game development concepts, published by Packt.",
+    tags: ["Publication"],
+    href: "https://www.packtpub.com/en-ie/product/procedural-content-generation-for-unity-game-development-9781785287473",
     category: "side-projects",
   },
 ];

@@ -65,7 +65,7 @@ export function Nav() {
                 onClick={() => scrollToSection(item.id)}
                 aria-current={activeId === item.id ? "true" : undefined}
                 className={cn(
-                  "rounded-sm text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                  "cursor-pointer rounded-sm text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
                   activeId === item.id && "text-foreground",
                 )}
               >
@@ -106,7 +106,7 @@ export function Nav() {
                   onClick={() => scrollToSection(item.id)}
                   aria-current={activeId === item.id ? "true" : undefined}
                   className={cn(
-                    "w-full rounded-md px-2 py-2 text-left text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:bg-muted focus-visible:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                    "w-full cursor-pointer rounded-md px-2 py-2 text-left text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:bg-muted focus-visible:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
                     activeId === item.id && "text-foreground",
                   )}
                 >

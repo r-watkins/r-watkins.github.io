@@ -14,19 +14,16 @@ export function ProjectCard({ project }: { project: Project }) {
       href={project.href}
       target="_blank"
       rel="noopener noreferrer"
-      className="block rounded-xl transition-transform hover:-translate-y-1 focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      className="block w-56 rounded-xl transition-transform hover:-translate-y-1 focus-visible:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
     >
-      <Card>
-        <img
-          src={project.thumbnail}
-          alt=""
-          className="aspect-video w-full object-cover grayscale"
-        />
+      <Card className="h-64">
         <CardHeader>
-          <CardTitle>{project.title}</CardTitle>
-          <CardDescription>{project.description}</CardDescription>
+          <CardTitle className="line-clamp-2">{project.title}</CardTitle>
+          <CardDescription className="line-clamp-3">
+            {project.description}
+          </CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="mt-auto">
           <div className="flex flex-wrap gap-1.5">
             {project.tags.map((tag) => (
               <Badge key={tag} variant="outline">

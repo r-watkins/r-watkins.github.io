@@ -27,6 +27,15 @@ export const projects: Project[] = [
     category: "sample-works",
   },
   {
+    id: "sample-works-3",
+    title: "Pantry List",
+    description:
+      "A simple open source React Native app for making lists and taking notes.",
+    tags: ["React Native"],
+    href: "https://github.com/r-watkins/note-list-mobile-app",
+    category: "sample-works",
+  },
+  {
     id: "side-projects-1",
     title: "Hop Fox Isle",
     description:

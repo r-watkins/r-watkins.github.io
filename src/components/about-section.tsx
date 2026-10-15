@@ -18,7 +18,7 @@ export function AboutSection() {
         <h1 className="text-3xl font-semibold tracking-tight">
           Ryan Watkins
         </h1>
-        <h3 className="text-1xl font-semibold tracking-tight">
+        <h3 className="font-semibold tracking-tight">
           Full-Stack Web - Design Systems - AI
         </h3>
         <p className="mt-4 text-muted-foreground">

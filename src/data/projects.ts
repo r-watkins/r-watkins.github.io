@@ -12,7 +12,7 @@ export const projects: Project[] = [
     id: "sample-works-1",
     title: "dev-workflow AI Plugin",
     description:
-      "A Cluade plugin that manages the software development cycle from research to design to implmentation.",
+      "A Claude plugin that manages the software development cycle from research to design to implementation.",
     tags: ["AI Engineering"],
     href: "https://github.com/r-watkins/dev-workflow-plugin",
     category: "sample-works",

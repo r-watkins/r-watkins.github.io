@@ -1,4 +1,5 @@
 import heroImage from "@/assets/hero.jpg";
+import { buttonVariants } from "@/components/ui/button";
 
 export function AboutSection() {
   return (
@@ -27,6 +28,24 @@ export function AboutSection() {
           production developer workflows, including AI-assisted feature development, constrained code-generation 
           experiences, and reusable platform components.
         </p>
+        <div className="mt-6 flex flex-wrap justify-center gap-3 sm:justify-start">
+          <a
+            href="https://github.com/r-watkins"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={buttonVariants({ variant: "outline" })}
+          >
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ryanswatkins"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={buttonVariants({ variant: "outline" })}
+          >
+            LinkedIn
+          </a>
+        </div>
       </div>
     </section>
   );
